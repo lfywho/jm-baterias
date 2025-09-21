@@ -102,7 +102,8 @@ https://templatemo.com/tm-538-digital-trend
                               <div class="about-info">
 
                                    <h2 class="mb-4" data-aos="fade-up">A melhor <strong>Loja de Baterias</strong> em
-                                        <strong>Jaboticabal</strong></h2>
+                                        <strong>Jaboticabal</strong>
+                                   </h2>
 
                                    <p class="mb-0" data-aos="fade-up">Uma loja de Baterias localizada na cidade de
                                         Jaboticabal com os melhores preços da região, de uma olhada em nossas <a
@@ -137,47 +138,47 @@ https://templatemo.com/tm-538-digital-trend
                               </h2>
 
                               <div class="owl-carousel owl-theme" id="project-slide">
-                                   
-                                   <div class="item project-wrapper" data-aos="fade-up">
-                                        <img src="images/project/heliar-bateria.png" class="img-fluid" alt="project image">
+
+                                   <div class="item project-wrapper" id="imgcarrocel" data-aos="fade-up">
+                                        <img src="images/project/heliar-bateria.png" class="img-fluid"
+                                             alt="project image">
 
                                         <div class="project-info">
                                              <small>Branding</small>
 
                                              <h3>
                                                   <a href="project-detail.html">
-                                                       <span>Shoes factory</span>
-                                                       <i class="fa fa-angle-right project-icon"></i>
+                                                       <span>Heliar</span>
                                                   </a>
                                              </h3>
                                         </div>
                                    </div>
 
-                                   <div class="item project-wrapper" data-aos="fade-up">
-                                        <img src="images/project/moura-bateria.png" class="img-fluid" alt="project image">
+                                   <div class="item project-wrapper" id="imgcarrocel" data-aos="fade-up">
+                                        <img src="images/project/moura-bateria.png" class="img-fluid"
+                                             alt="project image">
 
                                         <div class="project-info">
                                              <small>Social Media</small>
 
                                              <h3>
                                                   <a href="project-detail.html">
-                                                       <span>Race Bicycle</span>
-                                                       <i class="fa fa-angle-right project-icon"></i>
+                                                       <span>Moura</span>
                                                   </a>
                                              </h3>
                                         </div>
                                    </div>
 
-                                   <div class="item project-wrapper" data-aos="fade-up">
-                                        <img src="images/project/cral-bateria.png" class="img-fluid" alt="project image">
+                                   <div class="item project-wrapper" id="imgcarrocel" data-aos="fade-up">
+                                        <img src="images/project/cral-bateria.png" class="img-fluid"
+                                             alt="project image">
 
                                         <div class="project-info">
                                              <small>Video</small>
 
                                              <h3>
                                                   <a href="project-detail.html">
-                                                       <span>Ultimate HealthCare</span>
-                                                       <i class="fa fa-angle-right project-icon"></i>
+                                                       <span>CraL</span>
                                                   </a>
                                              </h3>
                                         </div>
@@ -197,7 +198,8 @@ https://templatemo.com/tm-538-digital-trend
 
                     <div class="col-lg-5 mx-lg-auto col-md-8 col-10">
                          <h1 class="text-white" data-aos="fade-up" data-aos-delay="100">Nós trabalhamos com
-                              <strong>Entregas</strong> também.</h1>
+                              <strong>Entregas</strong> também.
+                         </h1>
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
@@ -242,7 +244,21 @@ https://templatemo.com/tm-538-digital-trend
                     <div class="col-lg-3 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
                          <ul class="social-icon">
                               <li><a href="https://wa.me/5516997065355" target="_blank" class="fa fa-whatsapp"></a></li>
-                              <li><a href="mailto:jmbateri@gmail.com" target="_blank" class="fa fa-envelope"></a></li>
+                              <a href="#" class="fa fa-envelope" onclick="
+       // Tenta abrir Gmail em uma nova aba
+       window.open(
+         'https://mail.google.com/mail/?view=cm&fs=1&to=jmbateri@gmail.com', 
+         '_blank'
+       );
+
+       // Se não abrir, usa mailto após 500ms
+       setTimeout(() => { 
+         window.location.href = 'mailto:jmbateri@gmail.com'; 
+       }, 500);
+
+       return false;
+     ">
+                              </a>
                               <li><a href="https://www.instagram.com/jmbaterias/" target="_blank"
                                         class="fa fa-instagram"></a></li>
                          </ul>
