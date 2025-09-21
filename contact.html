@@ -92,8 +92,8 @@ https://templatemo.com/tm-538-digital-trend
 
           <!-- Follow https://templatemo.com/contact page to setup your own contact form -->
 
-          <form action="https://formsubmit.co/jmbateri@gmail.com" method="POST" class="contact-form" data-aos="fade-up"
-            data-aos-delay="300" role="form">
+          <form id="contactForm" action="https://formsubmit.co/jmbateri@gmail.com" method="POST" class="contact-form"
+            data-aos="fade-up" data-aos-delay="300" role="form">
 
             <div class="row">
               <div class="col-lg-6 col-12">
@@ -113,12 +113,44 @@ https://templatemo.com/tm-538-digital-trend
               </div>
             </div>
 
-            <!-- Redireciona após o envio -->
+            <!-- Redireciona após o envio (fallback se algo falhar) -->
             <input type="hidden" name="_next" value="https://jmbaterias.netlify.app/thanks.html">
-
-            <!-- Desativa captcha do FormSubmit -->
             <input type="hidden" name="_captcha" value="false">
           </form>
+
+          <!-- script AJAX (usa o endpoint /ajax do FormSubmit e redireciona para sua thanks.html) -->
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              const form = document.getElementById('contactForm');
+              if (!form) return;
+
+              form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const ajaxUrl = 'https://formsubmit.co/ajax/jmbateri@gmail.com';
+                const data = new FormData(form);
+
+                fetch(ajaxUrl, {
+                  method: 'POST',
+                  body: data
+                })
+                  .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                  })
+                  .then(json => {
+                    // sucesso -> redireciona para a sua página de thanks
+                    const next = form.querySelector('input[name="_next"]')?.value || 'https://jmbaterias.netlify.app/thanks.html';
+                    window.location.href = next;
+                  })
+                  .catch(err => {
+                    console.error('Envio via AJAX falhou, fazendo fallback para submit normal:', err);
+                    // fallback: submit normal (irá abrir a página do FormSubmit)
+                    form.submit();
+                  });
+              });
+            });
+          </script>
         </div>
 
       </div>
